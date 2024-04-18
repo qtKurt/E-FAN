@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Fan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <div id="app">
+    <div class="head">
+      <div :class="`front front-${speed}`"></div>
+      <div class="fan-wrap">
+        <div id="fan-mid" class="fan-mid"> 
+          <div class="fan-slap fan-slap1"></div>
+          <div class="fan-slap fan-slap2"></div>
+          <div class="fan-slap fan-slap3"></div>
+        </div>
+        <div class="fan-stand"></div>
+        <div class="fan-base"></div>
+      </div>
+    </div>
+    <div class="control">
+      <div class="control-bg"></div>
+      <div class="control-main">
+        <button id="off" class="control-item" @click="setSpeed(0)">0</button>
+        <button id="one" class="control-item" @click="setSpeed(1)">1</button>
+        <button id="two" class="control-item" @click="setSpeed(2)">2</button>
+        <button id="three" class="control-item" @click="setSpeed(3)">3</button>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="script.js"></script>
+<audio id="sound1" src="fanstart.mp3"></audio>
+<audio id="sound2" src="click-button-140881.mp3"></audio>
+</html>

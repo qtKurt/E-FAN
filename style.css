@@ -1,0 +1,278 @@
+:root {
+    --bg: #000;
+    --primary: #70233b;
+    --control: #d5d8dd;
+}
+
+#app {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 10px solid var(--primary);
+    background-image: repeating-conic-gradient(var(--bg) 0deg 6deg, transparent 6deg 18deg);
+}
+
+.head .front {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 96%;
+    height: 96%;
+    margin: auto;
+    background: -webkit-linear-gradient(top, transparent 20px, var(--bg) 21px),
+                -webkit-linear-gradient(left, transparent 40px, var(--bg) 41px);
+    background-size: 43px 23px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    z-index: 999;
+}
+
+.head::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bec4d8;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.fan-mid {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(231, 219, 219);
+    border: 10px solid rgb(10, 0, 7);
+    margin-top: 0px;
+    margin-left: 0px;
+    animation: startfan;
+    z-index: 9;
+}
+
+.fan-slap {
+    width: 80px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid rgb(24, 23, 23);
+    background-color: rgb(0, 0, 0);
+    margin-left: 0px;
+    margin-top: 0px;
+    position: absolute;
+}
+
+.fan-slap1 {
+    margin-left: 10px;
+    margin-top: -170px;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+
+.fan-slap2 {
+    margin-left: -120px;
+    margin-top: 0px;
+    transform: rotateZ(50deg);
+}
+
+.fan-slap3 {
+    margin-left: 80px;
+    margin-top: 0px;
+    transform: rotateZ(-70deg);
+}
+
+.control {
+    position: relative;
+    width: 100px;
+    height: 22px;
+    border-top: 0px;
+    border-right: 25px solid transparent;
+    border-bottom: 140px solid var(--primary);
+    border-left: 25px solid transparent;
+    margin-top: -28px;
+}
+
+.speed {
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255) !important;
+}
+
+#off,
+#one,
+#two,
+#three {
+    color: white;
+    background-color: rgb(29, 32, 32);
+    text-align: center;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.control-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    background-color: rgba(228, 171, 171, 0.753);
+    border-radius: 75%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.control-item {
+    color: white;
+    width: 40px;
+    background-color: rgb(29, 32, 32);
+    text-align: center;
+    margin: 3px;
+    cursor: pointer;
+    padding: 3px 10px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+@keyframes startfan {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.footer {
+    position: relative;
+    width: 180px;
+    height: 0px;
+    border-top: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid var(--primary);
+    border-left: 10px solid transparent;
+}
+
+.fan-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.fan-main-1 {
+    animation: 1s rotate infinite linear;
+}
+
+.fan-main-2 {
+    animation: 500ms rotate infinite linear;
+}
+
+.fan-main-3 {
+    animation: 200ms rotate infinite linear;
+}
+
+.front-1 {
+    animation: 3s rotate infinite linear;
+}
+
+.front-2 {
+    animation: 2s rotate infinite linear;
+}
+
+.front-3 {
+    animation: 1s rotate infinite linear;
+}
+
+@media (max-width: 600px) {
+    .head {
+        width: 250px;
+        height: 250px;
+    }
+
+    .fan-slap {
+        width: 40px; /* Adjust width */
+        height: 80px; /* Adjust height */
+        margin-top: 0; /* Reset margin */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .fan-slap1 {
+        margin-left: 5px; /* Adjust margin */
+        margin-top: -90px; /* Adjust margin */
+    }
+
+    .fan-slap2 {
+        margin-left: -60px; /* Adjust margin */
+        margin-top: 0; /* Reset margin */
+    }
+
+    .fan-slap3 {
+        margin-left: 65px; /* Adjust margin */
+        margin-top: 0; /* Reset margin */
+    }
+
+    .control {
+        width: 80px;
+        height: 32px;
+        margin-top: -38px;
+    }
+
+    .footer {
+        width: 170px;
+    }
+
+    .control-main {
+        margin-top: 37px;
+        padding: 5px;
+        border-radius: 50%; /* Added to override previous border-radius */
+    }
+
+    .control-item {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
